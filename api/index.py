@@ -1,15 +1,14 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel, HttpUrl
 import httpx
 from io import BytesIO
 from docx import Document
-from PyPDF2 import PdfReader # Use PdfReader for newer PyPDF2 versions
+from PyPDF2 import PdfReader
+from mangum import Mangum  
 
-app = FastAPI(
-    title="Document Parser API",
-    description="API to extract text from PDF and DOCX documents provided via URL."
-)
+app = FastAPI()
 
+# ... rest of your code ...
 # --- Request Body Model ---
 class DocumentParseRequest(BaseModel):
     url: HttpUrl
@@ -88,3 +87,5 @@ async def Hello():
     return {
         "Hello World"
     }
+
+handler = Mangum(app)  # ⬅️ Important for Vercel

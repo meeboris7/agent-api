@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/index.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/parse_document",
+            "methods": [
+                "POST"
+            ],
+            "dest": "api/index.py"
+        },
+        {
+            "src": "/hello",
+            "methods": [
+                "POST"
+            ],
+            "dest": "api/index.py"
+        }
+    ]
+}
