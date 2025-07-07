@@ -81,7 +81,7 @@ async def parse_document(request: DocumentParseRequest):
 # uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
 
-@app.post("/hello/")
+@app.get("/hello")
 async def Hello():
     
     return {
