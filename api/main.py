@@ -85,4 +85,6 @@ async def parse_document(request: DocumentParseRequest):
 @app.post("/")
 async def Hello(request: DocumentParseRequest):
     
-    return "Hello World"
+    return {
+        "Hello World"
+    }
