@@ -17,7 +17,7 @@
         {
             "src": "/hello",
             "methods": [
-                "POST"
+                "GET"
             ],
             "dest": "api/index.py"
         }
